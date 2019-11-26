@@ -1,31 +1,30 @@
-var evenNumbers= new Array();
-var oddNumbers=new Array();
+var evenNumbers = new Array();
+var oddNumbers = new Array();
 var characters = new Array();
 
-let props ={
-evens:evenNumbers,
-odds: oddNumbers,
-chars: characters,
-}
-function arraySort(a, b) {
-    return b - a
-    //return a<b?1 : a>b?-1 : 0
+let myObject = {
+    evens: evenNumbers,
+    odds: oddNumbers,
+    chars: characters,
 }
 
-var x = [1, 4, 7, "x", 3, 5, 8, "t", 0, 6, 10, "a"];
-x.sort(arraySort)
-x.reverse()
-var i = 0
-while (i < x.length) {
-    if (isNaN(x[i])) {
-        characters.push(x[i]);
+function arraySort(myArray) {
+    for (var i = 0; i < myArray.length; i++) {
+        if (isNaN(myArray[i])) {
+            characters.push(myArray[i]);
+        }
+        if (myArray[i] % 2 == 0) {
+            evenNumbers.push(myArray[i]);
+        }
+        if (myArray[i] % 2 == 1) {
+            oddNumbers.push(myArray[i]);
+        }
     }
-    if (x[i] % 2 == 0) {
-        evenNumbers.push(x[i]);
-    }
-    if (x[i] % 2 == 1) {
-        oddNumbers.push(x[i]);
-    }
-    i++;
+    evenNumbers.sort((a, b) => a - b);
+    oddNumbers.sort((a, b) => a - b);
+    characters.sort();
+
+    console.log(myObject);
 }
-console.log(props)
+var x = [1, 4, 7, "x", 3, 5, 8, "a", 0, 6, 10, "t"];
+arraySort(x)
