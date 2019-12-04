@@ -2,7 +2,7 @@ var evenNumbers = new Array();
 var oddNumbers = new Array();
 var characters = new Array();
 
-let myObject = {
+let numbers = {
     evens: evenNumbers,
     odds: oddNumbers,
     chars: characters,
@@ -24,7 +24,8 @@ function arraySort(myArray) {
     oddNumbers.sort((a, b) => a - b);
     characters.sort();
 
-    console.log(myObject);
+    console.log(numbers);
 }
-var x = [1, 4, 7, "x", 3, 5, 8, "a", 0, 6, 10, "t"];
-arraySort(x)
+/*var x = [1, 4, 7, "x", 3, 5, 8, "a", 0, 6, 10, "t"];
+arraySort(x)*/
+module.exports = arraySort;
