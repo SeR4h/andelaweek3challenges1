@@ -1,23 +1,21 @@
-var evenNumbers = new Array();
-var oddNumbers = new Array();
-var characters = new Array();
-
-let numbers = {
-    'evens': evenNumbers,
-    'odds': oddNumbers,
-    'chars': characters,
-}
-
 function arraySort(myArray) {
+    var evenNumbers = new Array();
+    var oddNumbers = new Array();
+    var characters = new Array();
 
-    if (typeof myArray === 'string') {
-        return 'invalid input';
+    let numbers = {
+        evens: evenNumbers,
+        odds: oddNumbers,
+        chars: characters,
     }
-    else if (typeof myArray === 'number') {
+
+    if (!Array.isArray(myArray)) {
+        //used return since (throw new Error('invalid input'))error is not received by the test
         return 'invalid input';
     }
     else {
         for (var i = 0; i < myArray.length; i++) {
+            // (Number.isNaN()) returns an empty chars object
             if (isNaN(myArray[i])) {
                 characters.push(myArray[i]);
             }
@@ -32,8 +30,6 @@ function arraySort(myArray) {
         oddNumbers.sort((a, b) => a - b);
         characters.sort();
     }
-    return numbers;
+    return numbers
 }
-/*var x = [1, 4, 7, 'x', 3, 5, 8, 'a', 0, 6, 10, 't'];
-arraySort(x)*/
 module.exports = arraySort;
