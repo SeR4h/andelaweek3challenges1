@@ -10,8 +10,7 @@ function arraySort(myArray) {
     }
 
     if (!Array.isArray(myArray)) {
-        //used return since (throw new Error('invalid input'))error is not received by the test
-        return 'invalid input';
+        throw new Error('invalid input')
     }
     else {
         for (var i = 0; i < myArray.length; i++) {

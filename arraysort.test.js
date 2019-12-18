@@ -1,11 +1,11 @@
 const arraySort = require('./arraysort');
 
 test('It does not accept numbers as input', () => {
-    expect(arraySort(5)).toBe('invalid input');
+    expect(() => { arraySort(5) }).toThrowError('invalid input');
 });
 
 test('It does not accept strings as input', () => {
-    expect(arraySort('string')).toBe('invalid input');
+    expect(() => { arraySort('string') }).toThrowError('invalid input');
 });
 
 test('It sorts a given array', () => {
